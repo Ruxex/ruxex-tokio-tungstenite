@@ -1,13 +1,13 @@
 [package]
-name = "tokio-tungstenite"
+name = "ruxex-tokio-tungstenite"
 description = "Tokio binding for Tungstenite, the Lightweight stream-based WebSocket implementation"
 categories = ["web-programming::websocket", "network-programming", "asynchronous", "concurrency"]
 keywords = ["websocket", "io", "web"]
 authors = ["Daniel Abramov <dabramov@snapview.de>", "Alexey Galakhov <agalakhov@snapview.de>"]
 license = "MIT"
 homepage = "https://github.com/snapview/tokio-tungstenite"
-documentation = "https://docs.rs/tokio-tungstenite/0.28.0"
-repository = "https://github.com/snapview/tokio-tungstenite"
+documentation = "https://docs.rs/ruxex-tokio-tungstenite/0.28.0"
+repository = "https://github.com/Ruxex/ruxex-tokio-tungstenite"
 version = "0.28.0"
 edition = "2018"
 rust-version = "1.63"
@@ -15,6 +15,9 @@ include = ["examples/**/*", "src/**/*", "LICENSE", "README.md", "CHANGELOG.md"]
 
 [package.metadata.docs.rs]
 all-features = true
+
+[lib]
+name = "tokio_tungstenite"
 
 [features]
 default = ["connect", "handshake"]
@@ -35,8 +38,10 @@ futures-util = { version = "0.3.28", default-features = false, features = ["sink
 tokio = { version = "1.0.0", default-features = false, features = ["io-util"] }
 
 [dependencies.tungstenite]
-git = "https://github.com/openai-oss-forks/tungstenite-rs"
-rev = "4fffad30fe373adbdcffab9545e9e9bf4f2fc19f"
+package = "ruxex-tungstenite"
+version = "0.27.0"
+git = "https://github.com/Ruxex/ruxex-tungstenite.git"
+branch = "release/0.27.0"
 default-features = false
 
 [dependencies.native-tls-crate]
